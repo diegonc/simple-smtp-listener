@@ -1,14 +1,27 @@
 {
-  "name": "simple-smtp-listener",
+  "name": "simple-smtp-listener-es5",
   "version": "1.0.1",
   "description": "A simple SMTP listen server",
   "repository": "https://github.com/birjolaxew/simple-smtp-listener.git",
-  "keywords": ["email", "mail", "smtp"],
-  "main": "./Client.js",
+  "keywords": [
+    "email",
+    "mail",
+    "smtp"
+  ],
+  "main": "lib/Client.js",
   "author": "birjolaxew",
+  "scripts": {
+    "build": "babel src -d lib",
+    "prepublish": "npm run build"
+  },
   "dependencies": {
     "mailparser": "^2.0.5",
     "node-ipc": "^9.0.1",
     "smtp-server": "^3.0.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.3",
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3"
   }
 }
